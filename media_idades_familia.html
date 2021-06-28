@@ -1,0 +1,36 @@
+<meta charset="utf-8">
+<script>
+	function pulaLinha() {
+
+		document.write("<br><br>");
+	}
+	function mostra(frase) {
+
+		document.write(frase);
+		pulaLinha();
+	}
+	var quantidadeFamiliares = parseInt(prompt("Quantos familiares tem em sua familia?"));
+	var totalIdades = 0; 
+	var totalPessoas = 0;
+	var menorIdade = Infinity;
+	var maiorIdade = 0;
+	for (var numeroInicial = 1; numeroInicial <= quantidadeFamiliares; numeroInicial++) {
+		var nome = prompt("Qual é o nome do seu familiar?");
+		var idade = parseInt(prompt(nome + ", tem quantos anos"));
+		mostra(nome + " tem " + idade + " ano(s).");
+		if (idade < menorIdade ) {
+			menorIdade = idade;
+		}
+		if (idade > maiorIdade) {
+			maiorIdade = idade;
+		}
+		totalIdades = totalIdades + idade;
+		totalPessoas = totalPessoas + 1;
+	}	
+	var media =totalIdades / totalPessoas;
+	var diferencaIdades = maiorIdade - menorIdade;
+	mostra("A média das idades é: " + media + " ano(s).");
+	mostra("A maior idade é: " + maiorIdade + " ano(s).");
+	mostra("A menor idade é: " + menorIdade + " ano(s).");
+	mostra("A diferença entre o mais velho e o mais novo é de: " + diferencaIdades +" ano(s).")
+</script>

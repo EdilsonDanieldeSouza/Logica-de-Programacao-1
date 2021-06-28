@@ -1,0 +1,36 @@
+<meta charset="utf-8">
+
+<input/> <!-- caixa de texto para o cliente digitar -->
+<button>Compare com o meu segerdo.</button> <!--botão--> 
+
+<script>
+	
+	var segredo = [5,7,10,2,3]; //variável com mais de um valor é chamada de arrays
+	var input = document.querySelector("input");//o valor da variavel é digitado no navegador
+	input.focus();//a caixa de texto já fica selecionada para digitar
+	
+	function verifica() { //função de verificação
+
+	 	var achou = false; 
+
+	 	for(var posicao = 0; posicao < segredo.length; posicao++){//A variável recebe o valor de 0 que é o primeiro numero do segredo e se ela for menor que a ordem do segredo ela recebe++
+
+        if(input.value == segredo[posicao]) {
+        	alert("Você ACERTOU!");
+        	achou = true;
+        	break;
+        }
+    }
+
+    if (achou == false) {
+    	alert("Você ERROU!!!!!!!!");
+    }
+        input.value = "";
+        input.focus();
+    }
+
+	var button = document.querySelector("button");
+
+	button.onclick = verifica;
+ 
+</script>

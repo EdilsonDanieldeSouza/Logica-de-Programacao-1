@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Imc calculado</title>
+	</head>	
+	<body>
+		<script> 
+			function pulaLinha() {
+		    	document.write("<br><br>");
+			}
+			function mostra(frase) {
+		  	 	document.write(frase);
+		   		pulaLinha();
+			}
+		  	function informa(frase) {
+		  		document.write(frase);
+		  	}
+			function calculaImc(altura, peso) {
+				return peso / (altura*altura);
+			}
+			function calculaPesoMinimo(imcMinimo, altura){
+				return imcMinimo * (altura*altura);
+			}
+			function calculaPesoMaximo(imcNormal, altura){
+				return imcNormal * (altura * altura);
+			}
+			var imcMinimo = 18.5;
+			var imcNormal = 25;
+			var imcSobrePeso = 30;
+			var imcObesdade = 35;
+			var imcObesdadeMorbida = 40;
+			var nome = prompt("OLÁ. Qual é o seu nome?");
+			var alturaInformada = prompt( nome + ", qual é a sua altura?");
+			var pesoInformado = prompt( nome + ", qual é o seu peso?");
+			var imc = Math.round(calculaImc(alturaInformada, pesoInformado));
+			var imcPesoMinimo = Math.round(calculaPesoMinimo(imcMinimo, alturaInformada));
+			var imcPesoMaximo = Math.round(calculaPesoMaximo(imcNormal, alturaInformada));
+			mostra(nome + ", o seu IMC calculado é " + imc + ".");
+			if (imc < imcMinimo) {
+				mostra("Você está abaixo do peso. ");
+				informa("Seu peso minímo é " + imcPesoMinimo + " kg");
+				mostra(". E seu peso máximo é " + imcPesoMaximo + " kg" + ".");
+			}
+			if (imc >=imcMinimo && imc < imcNormal) {
+				mostra("Você está com seu peso normal.");
+				informa("Seu peso minímo é " + imcPesoMinimo + " kg");
+				mostra(". E seu peso máximo é " + imcPesoMaximo + " kg" + ".");
+			}
+			if (imc >=imcNormal && imc < imcSobrePeso ) {
+				mostra("Você está com sobrepeso.");
+				informa("Seu peso minímo é " + imcPesoMinimo + " kg");
+				mostra(". E seu peso máximo é " + imcPesoMaximo + " kg" + ".");
+			}
+			if (imc >=imcSobrePeso && imc < imcObesdade) {
+				mostra("Você está com obesidade grau 1.");
+				informa("Seu peso minímo é " + imcPesoMinimo + " kg");
+				mostra(". E seu peso máximo é " + imcPesoMaximo + " kg" + ".");
+			}
+			if (imc >= imcObesdade && imc < imcObesdadeMorbida) {
+				mostra("Você está com obesidade grau 2.");
+				informa("Seu peso minímo é " + imcPesoMinimo + " kg");
+				mostra(". E seu peso máximo é " + imcPesoMaximo + " kg" + ".");
+			}
+			if (imc >= imcObesdadeMorbida) {
+				mostra("Você está com obesidade morbida.");
+				informa("Seu peso minímo é " + imcPesoMinimo + " kg");
+				mostra(". E seu peso máximo é " + imcPesoMaximo + " kg" + ".");
+			}
+			mostra("OBRIGADO POR PARTICIPAR!!!!");
+		</script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+<script>
+
+	function pulaLinha() {
+    	document.write("<br><br>");
+	}
+
+	function mostra(frase) {
+  	 	document.write(frase);
+   		pulaLinha();
+	}
+  	
+	var numeroMaximo = 40;
+	var numeroInicial = 30;
+ 
+
+	while(numeroInicial <= numeroMaximo){
+
+		if (numeroInicial == 33) {
+			numeroInicial = numeroInicial + 1;
+		}
+
+		if (numeroInicial == 37) {
+			numeroInicial = numeroInicial + 1;
+		}
+		else{
+
+		mostra("Número " + numeroInicial);
+		numeroInicial= numeroInicial + 1;
+	}
+}
+
+
+	mostra(" Fim");
+
+
+
+</script>

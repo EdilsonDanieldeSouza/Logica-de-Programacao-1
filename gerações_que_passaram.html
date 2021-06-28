@@ -1,0 +1,20 @@
+<meta charset="utf-8">
+
+<script>
+	
+	function pulaLinha(){
+		document.write("<br>");
+	}
+
+	function mostra (frase){
+		document.write(frase);
+		pulaLinha();
+	}
+
+	var anoAtual = 2021;
+	var anoDeChegada = 1500;
+	var primeiroFilho = 28;
+	var geracoesPassaram = (anoAtual - anoDeChegada) / primeiroFilho;
+	mostra("Passaram " + geracoesPassaram + " gerações.");
+
+</script>
